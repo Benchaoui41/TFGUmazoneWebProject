@@ -6,8 +6,7 @@ Proyecto de ejemplo de e-commerce compuesto por dos módulos principales:
 - **UmazoneWeb**: Frontend desarrollado con Angular
 
 Repositorio:  
-https://github.com/Benchaoui41/UmazoneProject.git
-
+https://github.com/Benchaoui41/TFGUmazoneWebProject.git
 ---
 
 ## Estructura del proyecto
