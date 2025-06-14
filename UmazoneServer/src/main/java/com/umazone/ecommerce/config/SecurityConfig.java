@@ -17,10 +17,7 @@ public class SecurityConfig {
         // protect endpoint /api/orders
         http.authorizeRequests()
                 .antMatchers("/api/orders/**")
-                .authenticated()
-                .and()
-                .oauth2ResourceServer()
-                .jwt();
+                .permitAll();
 
         // add CORS filters
         http.cors();
@@ -34,8 +31,6 @@ public class SecurityConfig {
         // disable CSRF since the App is not using Cookies for session tracking
         http.csrf().disable();
 
-
         return http.build();
     }
 }
-
