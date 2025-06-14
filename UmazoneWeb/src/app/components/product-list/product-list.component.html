@@ -13,7 +13,7 @@
           </div>
         </ng-container>
 
-        <!-- Actual product cards -->
+        <!-- Tarjetas reales de productos -->
         <div
           *ngFor="let tempProduct of products"
           class="col-12 col-sm-6 col-md-4 col-xl-3"
@@ -24,18 +24,20 @@
                 src="{{ tempProduct.imageUrl }}"
                 class="img-responsive"
                 loading="lazy"
-            /></a>
+              />
+            </a>
             <a routerLink="/products/{{ tempProduct.id }}">
               <h1>{{ tempProduct.name }}</h1>
             </a>
             <div class="price">
-              {{ tempProduct.unitPrice | currency : "USD" }}
+              {{ tempProduct.unitPrice | number : "1.2-2" }} €
             </div>
+
             <button
               (click)="addToCart(tempProduct)"
               class="btn btn-primary btn-style"
             >
-              Add to cart
+              Añadir al carrito
             </button>
           </div>
         </div>
@@ -52,7 +54,7 @@
           ></ngb-pagination>
         </div>
         <div class="right-pagination">
-          <span>Page Size</span>
+          <span>páginas</span>
           <select #myPageSelect (change)="updatePageSize($event)">
             <option selected="true">10</option>
             <option>20</option>

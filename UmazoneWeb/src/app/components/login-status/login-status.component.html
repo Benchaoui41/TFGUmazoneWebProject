@@ -1,29 +1,29 @@
 <div class="login-status-header">
   <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
-    Welcome back {{ userFullName }}!
+    ¡Bienvenido {{ userFullName }}!
   </div>
   <a href="#" *ngIf="!isAuthenticated" routerLink="/login">
     <div class="icon-container">
       <i class="fa-solid fa-right-to-bracket custom-icon"></i>
-      Login
+      Iniciar Sesión
     </div>
   </a>
   <a href="#" *ngIf="isAuthenticated" (click)="logout()">
     <div class="icon-container">
       <i class="fa-solid fa-arrow-right-from-bracket custom-icon"></i>
-      Logout
+      Salir
     </div>
   </a>
   <a href="#" *ngIf="isAuthenticated" routerLink="/members">
     <div class="icon-container">
       <i class="fa-solid fa-user-check custom-icon"></i>
-      Member
+      Miembro
     </div>
   </a>
   <a href="#" *ngIf="isAuthenticated" routerLink="/order-history">
     <div class="icon-container">
       <i class="fa-solid fa-truck-fast custom-icon"></i>
-      Orders
+      Pedidos
     </div>
   </a>
 </div>

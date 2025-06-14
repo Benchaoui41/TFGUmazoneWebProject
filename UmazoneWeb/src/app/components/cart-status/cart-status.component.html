@@ -3,7 +3,7 @@
     <div class="icon-container ms-5">
       <i class="fa fa-shopping-cart custom-icon" aria-hidden="true"></i>
       <div class="total">
-        {{ totalPrice | currency : "USD" }}
+        {{ totalPrice | number : "1.2-2" }} €
         <span> {{ totalQuantity }}</span>
       </div>
     </div>

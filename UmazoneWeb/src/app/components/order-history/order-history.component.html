@@ -19,7 +19,7 @@
               </td>
 
               <td>
-                {{ tempOrderHistory.totalPrice | currency : "USD" }}
+                {{ tempOrderHistory.totalPrice | number : "1.2-2" }} €
               </td>
 
               <td>
@@ -49,7 +49,7 @@
 <div class="main-content">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
-      <h3>Your Orders</h3>
+      <h3>Tus Pedidos</h3>
 
       <ng-container
         *ngIf="skeletonOrderHistoryList.length !== 0; else orderList"
@@ -74,20 +74,20 @@
       </ng-container>
 
       <ng-template #orderList>
-        <!-- Your actual order list content goes here -->
+        <!-- Aquí va el contenido real de la lista de pedidos -->
         <div *ngIf="orderHistoryList.length > 0">
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <th width="20%">Order Tracking Number</th>
-                <th width="10%">Total Price</th>
-                <th width="10%">Total Quantity</th>
-                <th width="10%">Date</th>
+                <th width="20%">Número de seguimiento</th>
+                <th width="10%">Precio Total</th>
+                <th width="10%">Cantidad Total</th>
+                <th width="10%">Fecha</th>
               </tr>
 
               <tr *ngFor="let tempOrderHistory of orderHistoryList">
                 <td>{{ tempOrderHistory.orderTrackingNumber }}</td>
-                <td>{{ tempOrderHistory.totalPrice | currency : "USD" }}</td>
+                <td>{{ tempOrderHistory.totalPrice | number : "1.2-2" }} €</td>
                 <td>{{ tempOrderHistory.totalQuantity }}</td>
                 <td>{{ tempOrderHistory.dateCreated | date : "medium" }}</td>
               </tr>
@@ -100,7 +100,7 @@
           class="alert alert-warning col-md-12"
           role="alert"
         >
-          No order found.
+          No se encontraron pedidos.
         </div>
       </ng-template>
     </div>

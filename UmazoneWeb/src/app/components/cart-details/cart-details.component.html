@@ -4,8 +4,8 @@
       <div *ngIf="cartItems.length > 0; else emptyCart">
         <table class="table table-bordered">
           <tr>
-            <th width="20%">Product Image</th>
-            <th width="50%">Product Detail</th>
+            <th width="20%">Imagen del producto</th>
+            <th width="50%">Detalle del producto</th>
             <th width="30%"></th>
           </tr>
           <tr class="cart-item" *ngFor="let tempCartItem of cartItems">
@@ -21,12 +21,12 @@
             <td>
               <div>
                 <p>{{ tempCartItem.name }}</p>
-                <p>{{ tempCartItem.unitPrice | currency : "USD" }}</p>
+                <p>{{ tempCartItem.unitPrice | number : "1.2-2" }} €</p>
               </div>
             </td>
             <td>
               <div class="items text-center d-flex flex-column gap-4">
-                <label>Quantity:</label>
+                <label>Cantidad:</label>
                 <div
                   class="d-flex align-items-center justify-content-center gap-5"
                 >
@@ -53,7 +53,7 @@
                     class="btn btn-danger btn-style"
                     (click)="removeItem(tempCartItem)"
                   >
-                    Remove
+                    Eliminar
                   </button>
                 </div>
                 <p class="mt-2">
@@ -69,22 +69,22 @@
           <tr>
             <td colspan="2"></td>
             <td style="font-weight: bold" class="text-center">
-              <p>Total Quantity: {{ totalQuantity }}</p>
-              <p>Shipping: FREE</p>
-              <p>Total Price: {{ totalPrice | currency : "USD" }}</p>
+              <p>Cantidad total: {{ totalQuantity }}</p>
+              <p>Envío: GRATIS</p>
+              <p>Precio total: {{ totalPrice | number : "1.2-2" }} €</p>
               <div>
                 <a routerLink="/checkout" class="btn btn-success btn-style"
-                  >Checkout</a
+                  >Finalizar compra</a
                 >
               </div>
             </td>
           </tr>
         </table>
       </div>
-      <!-- If cart is empty then display a message-->
+      <!-- Si el carrito está vacío, muestra un mensaje -->
       <ng-template #emptyCart>
         <div class="alert alert-warning col-md-12" role="alert">
-          Your shopping cart is empty.
+          Tu carrito de compras está vacío.
         </div>
       </ng-template>
     </div>
