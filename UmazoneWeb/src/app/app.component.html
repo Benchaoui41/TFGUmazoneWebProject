@@ -1,0 +1,120 @@
+<div class="page-wrapper">
+  <!-- MENU SIDEBAR-->
+  <aside class="menu-sidebar d-none d-md-block">
+    <div style="padding: 2rem 0 1rem 0; text-align: center">
+      <a routerLink="/products" style="text-decoration: none; cursor: pointer">
+        <span
+          style="
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 2.3rem;
+            font-weight: 400;
+            letter-spacing: 0.35em;
+            color: #fff;
+            text-transform: uppercase;
+            display: inline-block;
+          "
+        >
+          Umazone
+        </span>
+      </a>
+    </div>
+    <app-product-category-menu></app-product-category-menu>
+  </aside>
+  <!-- END MENU SIDEBAR-->
+  <!-- START MOBILE NAV-->
+  <nav
+    class="mobile-nav d-block d-md-none"
+    [ngClass]="{ hidden: isScrolledDown }"
+    style="border-bottom: 1px solid #e5e5e5; padding: 0.5rem 0"
+  >
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      "
+    >
+      <div style="text-align: center; padding: 1rem 0">
+        <a
+          routerLink="/products"
+          style="text-decoration: none; cursor: pointer"
+        >
+          <span
+            style="
+              font-family: 'Georgia', 'Times New Roman', Times, serif;
+              font-size: 2.3rem;
+              font-weight: 400;
+              letter-spacing: 0.35em;
+              color: #fff;
+              text-transform: uppercase;
+              display: inline-block;
+              text-shadow: 0 1px 4px #05143f;
+            "
+          >
+            Umazone
+          </span>
+        </a>
+      </div>
+      <app-login-status></app-login-status>
+      <app-cart-status></app-cart-status>
+      <app-product-category-menu></app-product-category-menu>
+    </div>
+  </nav>
+  <!-- END MOBILE NAV-->
+  <!-- PAGE CONTAINER-->
+  <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+      <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <div class="header-wrap">
+            <div class="left-header" style="display: flex; align-items: center">
+              <app-search></app-search>
+            </div>
+            <div class="right-header">
+              <div class="logo" style="text-align: center; padding: 1rem 0">
+                <a
+                  routerLink="/products"
+                  style="text-decoration: none; cursor: pointer"
+                >
+                  <span
+                    style="
+                      font-family: 'Georgia', 'Times New Roman', Times, serif;
+                      font-size: 2.3rem;
+                      font-weight: 400;
+                      letter-spacing: 0.35em;
+                      color: #fff;
+                      text-transform: uppercase;
+                      display: inline-block;
+                      text-shadow: 0 1px 4px #05143f;
+                      display: none;
+                    "
+                  >
+                    Umazone
+                  </span>
+                </a>
+              </div>
+              <app-login-status></app-login-status>
+              <app-cart-status></app-cart-status>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER DESKTOP-->
+
+    <!-- MAIN CONTENT-->
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- END PAGE CONTAINER-->
+
+  <footer>
+    <ul>
+      <li><a href="#">Sobre Nosotros</a></li>
+      <li><a href="#">Contáctanos</a></li>
+      <li><a href="#">Ayuda</a></li>
+    </ul>
+  </footer>
+</div>

@@ -1,0 +1,19 @@
+<div class="detail-section">
+  <div class="container-fluid product-detail-container">
+    <div class="left-detail">
+      <h3>{{ product.name }}</h3>
+      <img src="{{ product.imageUrl }}" alt="image-url" class="detail-img" />
+      <div class="price">{{ product.unitPrice | number : "1.2-2" }} €</div>
+      <button (click)="addToCart()" class="btn btn-primary btn-style">
+        Añadir al carrito
+      </button>
+    </div>
+    <div class="right-detail">
+      <h4>Descripción</h4>
+      <p>{{ product.description }}</p>
+      <a routerLink="/products">
+        <i class="fa-solid fa-arrow-left"></i> Volver a la lista de productos
+      </a>
+    </div>
+  </div>
+</div>
